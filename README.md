@@ -23,7 +23,7 @@ wget -rc http://example.com # Download a mirror of example.com
 wget ???? http://example.com # Ignore robots.txt and crawl
 wget -rcA .pdf http://example.com # Download all pdf files in example.com
 ```
-@smmsadrnezh
+@smmsadrnezh **TODO**
 
 
 Image checks
@@ -47,7 +47,7 @@ img.save('/path/to/file')
 
 # Process images
 Image.blend(image1,image2,0.5) # Should be the same size
-# TODO: add more stuff here!
+**TODO**: add more stuff here!
 ```
 
 
@@ -60,12 +60,17 @@ Audio checks
 * Transforming from time space to frquency space
 * Search the lyrics if applicable
 
-MD5 Hash
-========
-Encrypting
-----------
+Hashes
+======
+
+* This online tool is good: http://string-functions.com/
+* AES en/de-cryption: http://aes.online-domain-tools.com/
+
+
+Encrypting MD5
+--------------
 * Online: http://www.md5calc.com/
-* PHP: echo "<?=md5('plain text');?>" | php
+* PHP: `echo "<?=md5('plain text');?>" | php`
 * Python:
 ```
 import hashlib
@@ -76,8 +81,8 @@ def md5(string):
 ```
 * Bash: `printf plain text | md5sum`
 
-Decrypting
-----------
+Decrypting MD5
+--------------
 * Good for bath decoing. Has a simple captcha: http://www.hashkiller.co.uk/md5-decrypter.aspx
 * No captcha, can be used in python:
 ```
@@ -98,7 +103,41 @@ def decrypt_md5(encrypted):
 
 Secure coding
 =============
-* Check for array length
+* Check for array length (overflow)
+* Check for array index [0..n-1], non negative, not \ge n
 * printf(string) -> printf("%s", string)
-# TODO
+**TODO**
 
+Web
+===
+* Vularnablity scanner: http://www.acunetix.com/
+* Stealing cookies
+* Changing php session id
+* SQL injection
+* Inspect ajax requests
+* Using javascript in fields like username and search \([XSS](https://en.wikipedia.org/wiki/Cross-site_scripting)\)
+* Check these:
+  1. `../../../../passwd`
+  2. postgresql tables: `pg_catalog` `pg_namespace`
+  3. `../flag.txt`
+  4. **TODO**
+* Add characters like %00 and %20 to ajax URLs
+
+Reverse and Exploit
+===================
+Well, i **should** put some time in mastering these tools, they're very useful in CTF contests.
+Best ever tool: [IDA](https://www.hex-rays.com/products/ida/support/download.shtml)
+
+Windows
+-------
+* Files may be packed using [ASPack](http://aspack.com/)
+* Snowman is very good in decompiling C programs
+
+Linux
+-----
+1. nm
+**TODO**
+2. objdump
+**TODO**
+3. gdb
+**TODO**
