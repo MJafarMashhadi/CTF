@@ -24,3 +24,26 @@ wget -rcA .pdf http://example.com # Download all pdf files in example.com
 ```
 @smmsadrnezh
 
+
+Image checks
+------------
+
+*Check exif*
+
+
+*the goddamn trivia*
+commangline tool `outguess`
+
+*Image editing in python*
+```
+From PIL import Image
+
+# Save and load
+img = Image.open('/path/to/file')
+img.save('/path/to/file')
+
+# Process images
+Image.blend(image1,image2,0.5) # Should be the same size
+# TODO: add more stuff here!
+```
+
