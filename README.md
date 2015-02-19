@@ -1,11 +1,12 @@
 In the name of god
 
-CTF Tools and useful commandline options
-===========================================
+# CTF Tools and useful commandline options
+
+Basic UNIX command-line tools
+=============================
 
 Finding text
 ------------
-
 ```
 grep flag /path/to/file
 grep -i flag /path/to/file # Non case-sensitive
@@ -26,15 +27,17 @@ wget -rcA .pdf http://example.com # Download all pdf files in example.com
 
 
 Image checks
-------------
+============
 
-*Check exif*
+Check exif
+----------
 
-
-*the goddamn trivia*
+That goddamn trivia
+------------------
 commangline tool `outguess`
 
-*Image editing in python*
+Image editing in python
+-----------------------
 ```
 From PIL import Image
 
@@ -49,10 +52,46 @@ Image.blend(image1,image2,0.5) # Should be the same size
 
 
 Audio checks
-------------
+============
 * Changing play speed
 * Find difference of left and right channel
 * Reversing audio
 * Visualizing audio with specterum tool in audacity
 * Transforming from time space to frquency space
 * Search the lyrics if applicable
+
+MD5 Hash
+========
+Encrypting
+----------
+* Online: http://www.md5calc.com/
+* PHP: echo "<?=md5('plain text');?>" | php
+* Python:
+```
+import hashlib
+def md5(string):
+	hasher = hashlib.md5()
+	hasher.update(string)
+	return hasher.hexdigest()
+```
+* Bash: `printf plain text | md5sum`
+
+Decrypting
+----------
+* Good for bath decoing. Has a simple captcha: http://www.hashkiller.co.uk/md5-decrypter.aspx
+* No captcha, can be used in python:
+```
+import requests
+
+def decrypt_md5(encrypted):
+  post_values = {
+    'hash':encrypted,
+    'submit':'Decrypt It!',
+  }
+  resp_text = requests.post(url='http://md5decryption.com/', data=post_values).text
+  ii = resp_text.find('Decrypted Text: </b>') + 1
+  ii = resp_text.find('>', ii) + 1
+  jj = resp_text.find('<', ii)
+  resp = resp_text[ii:jj]
+  return resp
+```
