@@ -95,3 +95,10 @@ def decrypt_md5(encrypted):
   resp = resp_text[ii:jj]
   return resp
 ```
+
+Secure coding
+=============
+* Check for array length
+* printf(string) -> printf("%s", string)
+# TODO
+
