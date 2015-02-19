@@ -47,3 +47,12 @@ Image.blend(image1,image2,0.5) # Should be the same size
 # TODO: add more stuff here!
 ```
 
+
+Audio checks
+------------
+* Changing play speed
+* Find difference of left and right channel
+* Reversing audio
+* Visualizing audio with specterum tool in audacity
+* Transforming from time space to frquency space
+* Search the lyrics if applicable
