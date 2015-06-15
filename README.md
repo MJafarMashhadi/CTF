@@ -153,7 +153,12 @@ def decrypt_md5(encrypted):
 ## Network ##
 
 * check for open ports with nmap. then connect through ssh or telnet or netcat or open it in web browser. maybe it is a non-standard port.
-* wireshark **TODO!**
+
+### wireshark ###
+
+* find packets with telnet protocol. right-click on a packet in the session, and select 'Follow TCP Stream.' you see credential because telnet does not encrypt data.
+* use http filter to clean up the listed packets to only include those using the HTTP protocol. find url or some meaningfull text.
+* find flag using the device which is captured [TODO]
 
 ## Web ##
 
