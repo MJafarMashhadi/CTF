@@ -167,6 +167,8 @@ def decrypt_md5(encrypted):
   3. `../flag.txt`
   4. **TODO**
 * Add characters like %00 and %20 to ajax URLs
+* check robots.txt file content and html page source for any information is hidden from the web.
+
 
 ## Reverse and Exploit ##
 
