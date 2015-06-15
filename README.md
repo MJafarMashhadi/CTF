@@ -77,7 +77,8 @@ commandline tool `outguess`
 
 #### diff command ####
 
-* you may find the original image by searching problem image in [google](https://images.google.com/)
+* you may find the original image by searching problem image in [google](https://images.google.com/) if it's not given.
+* also it works for finding difference between two text files.
 
 #### Image editing in python ####
 
