@@ -52,6 +52,12 @@ wget -rcA .pdf http://example.com # Download all pdf files in example.com
 
 ## Steganography ##
 
+### Text ###
+
+#### Poem Code ####
+
+[Solution](http://wmbriggs.com/post/2309/)
+
 ### Images checklist ###
 
 #### Check exif tags ####
