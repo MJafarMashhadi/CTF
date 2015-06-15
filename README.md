@@ -26,7 +26,7 @@
 
 * exiftool (check image tags)
 * outguess
-* net-tools (includes nmap and netstat and other primary networking tools)
+* net-tools (includes nmap and netstat and nc and other primary networking tools)
 
 # Basic UNIX command-line tips #
 
@@ -76,6 +76,8 @@ commandline tool `outguess`
 * symptoms: BMP files
 
 #### diff command ####
+
+* you may find the original image by searching problem image in [google](https://images.google.com/)
 
 #### Image editing in python ####
 
@@ -146,6 +148,10 @@ def decrypt_md5(encrypted):
 * Check for array index [0..n-1], non negative, not \ge n
 * printf(string) -> printf("%s", string)
 **TODO**
+
+## Network ##
+
+* check for open ports with nmap. then connect through ssh or telnet or netcat or open it in web browser. maybe it is a non-standard port.
 
 ## Web ##
 
