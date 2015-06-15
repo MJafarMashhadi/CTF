@@ -125,7 +125,7 @@ def md5(string):
 
 #### Decrypting MD5 ####
 
-* Good for bath decoing. Has a simple captcha: http://www.hashkiller.co.uk/md5-decrypter.aspx
+* Good for bath decoding. Has a simple captcha: http://www.hashkiller.co.uk/md5-decrypter.aspx
 * No captcha, can be used in python:
 ```
 import requests
@@ -153,6 +153,7 @@ def decrypt_md5(encrypted):
 ## Network ##
 
 * check for open ports with nmap. then connect through ssh or telnet or netcat or open it in web browser. maybe it is a non-standard port.
+* wireshark **TODO!**
 
 ## Web ##
 
