@@ -175,7 +175,7 @@ def decrypt_md5(encrypted):
   4. **TODO**
 * Add characters like %00 and %20 to ajax URLs
 * check robots.txt file content and html page source for any information is hidden from the web.
-
+* monitor cookies set on your browser when you send request to a web page.
 
 ## Reverse and Exploit ##
 
