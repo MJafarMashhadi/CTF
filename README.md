@@ -204,6 +204,10 @@ def decrypt_md5(encrypted):
 Well, i **should** put some time in mastering these tools, they're very useful in CTF contests.
 Best ever tool: [IDA](https://www.hex-rays.com/products/ida/support/download.shtml)
 
+Checke binary tools in command line tools above.
+
+`ltrace -C -i ./file` Dynamically analyses function calls
+
 ## Windows ##
 
 * Files may be packed using [ASPack](http://aspack.com/)
@@ -218,3 +222,6 @@ Best ever tool: [IDA](https://www.hex-rays.com/products/ida/support/download.sht
 3. gdb
 **TODO**
 4. metasploit
+
+5. strings
+
