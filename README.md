@@ -24,9 +24,10 @@
 
 #### Command Line Tools ####
 
-* exiftool (check image tags)
+* exiftool (check files meta info)
 * outguess
 * net-tools (includes nmap and netstat and nc and other primary networking tools)
+* binwalk
 
 # Basic UNIX command-line tips #
 
@@ -37,9 +38,26 @@ grep flag /path/to/file
 grep -i flag /path/to/file # Non case-sensitive
 grep -R flag . # Search all files in current directory recursively
 grep -a flag /path/to/file # Process a binary file as if it were text
+grep -oba PNG binaryfile.bin # Finds "PNG" in binaryfile.bin and returns binary offset of it
 ```
 
 In vim and man pages: `[ESC] /flag [enter]` jump to next result with `[N]`
+
+## Binary Stuff ##
+```
+grep -oba PNG binaryfile.bin # Finds "PNG" in binaryfile.bin and returns binary offset of it
+dd status=none if=binaryfile.bin bs=1 skip=M count=N  # get a part of a binary file
+binwalk  # Finds stuff in a binary file
+binwalk --dd='.*' file  # Extracts stuff in file
+foremost -T  # Finds stuff in binary files
+strings  # Finds strings within a file
+radare2  # Static analysis of disassemblies
+xxd  # make a hexdump or do the reverse.
+
+```
+
+[http://superuser.com/questions/294270/how-to-view-raw-binary-data-as-an-image-with-given-width-and-height](http://superuser.com/questions/294270/how-to-view-raw-binary-data-as-an-image-with-given-width-and-height) 
+[http://serverfault.com/questions/173999/dump-a-linux-processs-memory-to-file](http://serverfault.com/questions/173999/dump-a-linux-processs-memory-to-file)
 
 ## Wget options ##
 
@@ -159,6 +177,8 @@ def decrypt_md5(encrypted):
 * find packets with telnet protocol. right-click on a packet in the session, and select 'Follow TCP Stream.' you see credential because telnet does not encrypt data.
 * use http filter to clean up the listed packets to only include those using the HTTP protocol. find url or some meaningfull text.
 * find flag using the device which is captured [TODO]
+* Network miner is a good windows software for mining pcap files
+
 
 ## Web ##
 
@@ -176,6 +196,8 @@ def decrypt_md5(encrypted):
 * Add characters like %00 and %20 to ajax URLs
 * check robots.txt file content and html page source for any information is hidden from the web.
 * monitor cookies set on your browser when you send request to a web page.
+* ?page=php://filter/read=convert.base64-encode/resource=../delete  To get files source codes on server (LFI)
+
 
 ## Reverse and Exploit ##
 
