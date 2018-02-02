@@ -1,4 +1,4 @@
-# CTF tools and useful commandline tips #
+# CTF tools and useful command-line tips #
 
 ## Preparation Checklist ##
 
@@ -12,9 +12,9 @@
 
 #### Apps ####
 
-* wireshark (for opening network capture files)
+* Wireshark (for opening network capture files)
 * audacity (for manipulating on voice files)
-* VmWare and VirtualBox (for recovering corrupted disk image files)
+* VMware and VirtualBox (for recovering corrupted disk image files)
 * one email client (for opening .eml email and attachment backups)
 
 #### Other Stuff ####
@@ -24,7 +24,7 @@
 
 #### Command Line Tools ####
 
-* exiftool (check files meta info)
+* ExifTool (check files meta info)
 * outguess
 * net-tools (includes nmap and netstat and nc and other primary networking tools)
 * binwalk
@@ -38,17 +38,17 @@ grep flag /path/to/file
 grep -i flag /path/to/file # Non case-sensitive
 grep -R flag . # Search all files in current directory recursively
 grep -a flag /path/to/file # Process a binary file as if it were text
-grep -oba PNG binaryfile.bin # Finds "PNG" in binaryfile.bin and returns binary offset of it
+grep -oba PNG binaryfile.bin # Finds "PNG" in binaryfile.bin and returns the binary offset of it
 ```
 
 In vim and man pages: `[ESC] /flag [enter]` jump to next result with `[N]`
 
 ## Binary Stuff ##
 ```
-grep -oba PNG binaryfile.bin # Finds "PNG" in binaryfile.bin and returns binary offset of it
+grep -oba PNG binaryfile.bin # Finds "PNG" in binaryfile.bin and returns the binary offset of it
 dd status=none if=binaryfile.bin bs=1 skip=M count=N  # get a part of a binary file
 binwalk  # Finds stuff in a binary file
-binwalk --dd='.*' file  # Extracts stuff in file
+binwalk --dd='.*' file  # Extracts stuff in a file
 foremost -T  # Finds stuff in binary files
 strings  # Finds strings within a file
 radare2  # Static analysis of disassemblies
@@ -81,12 +81,12 @@ wget -rcA .pdf http://example.com # Download all pdf files in example.com
 #### Check exif tags ####
 
 ```
-exiftool example.jpg
+ExifTool example.jpg
 ```
 
 #### That goddamn trivia ####
 
-commandline tool `outguess`
+command-line tool `outguess`
 
 #### Least Significant Bit (LSB) Insertion ####
 
@@ -95,8 +95,8 @@ commandline tool `outguess`
 
 #### diff command ####
 
-* you may find the original image by searching problem image in [google](https://images.google.com/) if it's not given.
-* also it works for finding difference between two text files.
+* you may find the original image by searching problem image in [Google](https://images.google.com/) if it's not given.
+* also it works for finding the difference between two text files.
 
 #### Image editing in python ####
 
@@ -115,10 +115,10 @@ Image.blend(image1,image2,0.5) # Should be the same size
 ### Audio checklist ###
 
 * Changing play speed
-* Find difference of left and right channel
+* Find difference between left and right channel
 * Reversing audio
-* Visualizing audio with specterum tool in audacity
-* Transforming from time space to frquency space
+* Visualizing audio with spectrum tool in audacity
+* Transforming from time-space to frequency space
 * Search the lyrics if applicable
 
 ### Hashes ###
@@ -135,9 +135,9 @@ Image.blend(image1,image2,0.5) # Should be the same size
 ```
 import hashlib
 def md5(string):
-	hasher = hashlib.md5()
-	hasher.update(string)
-	return hasher.hexdigest()
+    hasher = hashlib.md5()
+    hasher.update(string)
+    return hasher.hexdigest()
 ```
 * Bash: `printf plain text | md5sum`
 
@@ -170,12 +170,12 @@ def decrypt_md5(encrypted):
 
 ## Network ##
 
-* check for open ports with nmap. then connect through ssh or telnet or netcat or open it in web browser. maybe it is a non-standard port.
+* check for open ports with nmap. Then connect through ssh or telnet or netcat or open it in a web browser. Maybe it is a non-standard port.
 
 ### wireshark ###
 
 * find packets with telnet protocol. right-click on a packet in the session, and select 'Follow TCP Stream.' you see credential because telnet does not encrypt data.
-* use http filter to clean up the listed packets to only include those using the HTTP protocol. find url or some meaningfull text.
+* use HTTP filter to clean up the listed packets to only include those using the HTTP protocol. find URL or some meaningful text.
 * find flag using the device which is captured [TODO]
 * Network miner is a good windows software for mining pcap files
 
@@ -201,10 +201,10 @@ def decrypt_md5(encrypted):
 
 ## Reverse and Exploit ##
 
-Well, i **should** put some time in mastering these tools, they're very useful in CTF contests.
+Well, I **should** put some time into mastering these tools, they're very useful in CTF contests.
 Best ever tool: [IDA](https://www.hex-rays.com/products/ida/support/download.shtml)
 
-Checke binary tools in command line tools above.
+Check binary tools in command line tools above.
 
 `ltrace -C -i ./file` Dynamically analyses function calls
 
